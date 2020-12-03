@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image, KeyboardAvoidingView } from 'react-native';
 
 function SignScreen({ navigation }) {
   return (
+    <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "position" : "height"} style={styles.container}>
       <View style={styles.container}>
         <Image 
             style={styles.Image}
@@ -36,7 +37,8 @@ function SignScreen({ navigation }) {
         <TouchableOpacity onPress={() => navigation.navigate('Home')}>
             <Text style={styles.LoginButton}> Continue without login </Text>
         </TouchableOpacity>
-    </View>
+     </View>
+    </KeyboardAvoidingView>
   );
 }
 

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { Button, Text, View } from 'react-native';
 
-function AccountDrawer() {
+function AccountDrawer({ navigation }) {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Button title="Account" />
+        <Button title="Login" onPress={() => navigation.navigate('Login')}/>
       </View>
     );
   }

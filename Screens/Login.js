@@ -1,39 +1,40 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image, KeyboardAvoidingView, Platform } from 'react-native';
+
 
 function LoginScreen({ navigation }) {
   return (
-    <View style={styles.container}>
-        <Image 
-            style={styles.Image}
-            source={require('../Images/shopcart.png')}
-        />
-        <TextInput 
-            style={styles.InputBox}
-            placeholder='E-mail'
-            keyboardType='email-address'
-        />
-        <TextInput
-            style={styles.InputBox}
-            placeholder='Password'
-            secureTextEntry={true}
-        />
-        <TouchableOpacity style={styles.LoginButton}>
-            <Text style={styles.LoginButtonText}>Login</Text>
-        </TouchableOpacity>
-        <View style={styles.SignUpButtonText}>
-            <Text> Don't have an account yet? </Text>
-            <TouchableOpacity onPress={() => navigation.navigate('Sign Up')}>
-                <Text style={styles.SignUpButton}> Sign Up </Text>
+    <KeyboardAvoidingView behavior={Platform.OS == "ios" ? "position" : "height"} style={styles.container}>
+        <View style={styles.container}>
+            <Image 
+                style={styles.Image}
+                source={require('../Images/shopcart.png')}
+            />
+            <TextInput 
+                style={styles.InputBox}
+                placeholder='E-mail'
+                keyboardType='email-address'
+            />
+            <TextInput
+                style={styles.InputBox}
+                placeholder='Password'
+                secureTextEntry={true}
+            />
+            <TouchableOpacity style={styles.LoginButton}>
+                <Text style={styles.LoginButtonText}>Login</Text>
             </TouchableOpacity>
+            <View style={styles.SignUpButtonText}>
+                <Text> Don't have an account yet? </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Sign Up')}>
+                    <Text style={styles.SignUpButton}> Sign Up </Text>
+                </TouchableOpacity>
+            </View>
+            <Text style={styles.SignUpButtonText}> or </Text>
+            <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                <Text style={styles.SignUpButton}> Continue without login </Text>
+            </TouchableOpacity>      
         </View>
-        <Text style={styles.SignUpButtonText}> or </Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-            <Text style={styles.SignUpButton}> Continue without login </Text>
-        </TouchableOpacity>
-
-           
-    </View>
+    </KeyboardAvoidingView>
   );
 }
 
