@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
-import { Header } from 'react-native/Libraries/NewAppScreen';
 
 function MainDrawer() {
     return (

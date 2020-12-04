@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image, KeyboardAvoidingView, Platform } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, KeyboardAvoidingView, Platform } from 'react-native';
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 
 function LoginScreen({ navigation }) {
@@ -10,15 +12,29 @@ function LoginScreen({ navigation }) {
                 style={styles.Image}
                 source={require('../Images/shopcart.png')}
             />
-            <TextInput 
-                style={styles.InputBox}
+            <Input 
+                label='Please enter your E-mail'
                 placeholder='E-mail'
+                leftIcon={
+                    <Icon
+                        name='envelope'
+                        size={24}
+                        color='black'
+                    />
+                }
                 keyboardType='email-address'
             />
-            <TextInput
-                style={styles.InputBox}
+            <Input
+                label='Please enter your password'
                 placeholder='Password'
                 secureTextEntry={true}
+                leftIcon={
+                    <Icon
+                        name='lock'
+                        size={32}
+                        color='black'
+                    />
+                }
             />
             <TouchableOpacity style={styles.LoginButton}>
                 <Text style={styles.LoginButtonText}>Login</Text>
@@ -42,7 +58,7 @@ const styles = StyleSheet.create({
     container: {
         flexGrow: 1,
         justifyContent: 'center',
-        alignItems: 'center',
+        alignItems: 'center'
     },
 
     Image: {
@@ -50,15 +66,6 @@ const styles = StyleSheet.create({
         height: 150,
         justifyContent: 'center',
         alignItems: 'center'
-    },
-
-    InputBox: {
-        width: 400,
-        borderRadius: 25,
-        paddingVertical: 15,
-        marginVertical: 10,
-        backgroundColor: '#f0ffff',
-        textAlign: 'center'
     },
 
     LoginButton: {

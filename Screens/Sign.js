@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, TouchableOpacity, TextInput, View, Image, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, TouchableOpacity, View, Image, KeyboardAvoidingView } from 'react-native';
+import { Input } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 function SignScreen({ navigation }) {
   return (
@@ -9,20 +11,41 @@ function SignScreen({ navigation }) {
             style={styles.Image}
             source={require('../Images/shopcart.png')}
         />
-        <TextInput 
-            style={styles.InputBox}
-            placeholder='Please enter an E-mail address'
+        <Input 
+            label='Please enter your E-mail adress'
+            placeholder='E-mail'
             keyboardType='email-address'
+            leftIcon={
+                <Icon
+                    name='envelope'
+                    size={24}
+                    color='black'
+                />
+            }
         />
-        <TextInput
-            style={styles.InputBox}
-            placeholder='Please enter a password'
+        <Input
+            label='Please enter a password'
+            placeholder='Password'
             secureTextEntry={true}
+            leftIcon={
+                <Icon
+                    name='lock'
+                    size={32}
+                    color='black'
+                />
+            }
         />
-        <TextInput
-            style={styles.InputBox}
-            placeholder='Please retype your password'
+        <Input
+            label='Please retype your password'
+            placeholder='Password'
             secureTextEntry={true}
+            leftIcon={
+                <Icon
+                    name='lock'
+                    size={32}
+                    color='black'
+                />
+            }
         />
         <TouchableOpacity style={styles.SignButton}>
             <Text style={styles.SignButtonText}>Sign Up</Text>
@@ -54,15 +77,6 @@ const styles = StyleSheet.create({
       height: 150,
       justifyContent: 'center',
       alignItems: 'center'
-  },
-
-  InputBox: {
-      width: 400,
-      borderRadius: 25,
-      paddingVertical: 15,
-      marginVertical: 10,
-      backgroundColor: '#f0ffff',
-      textAlign: 'center'
   },
 
   SignButton: {
