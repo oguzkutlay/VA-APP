@@ -8,33 +8,37 @@ import LoginScreen from './Screens/Login';
 
 const Stack = createStackNavigator();
 
-function App() {
+function App () {
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{headerStyle: {backgroundColor: '#ffa500'}, headerTintColor: '#fff', headerTitleStyle: {fontWeight: 'bold'}}}>
+      <Stack.Navigator 
+        screenOptions={{
+          headerStyle: {backgroundColor: '#ffa500'},
+          headerTintColor: '#fff', 
+          headerTitleStyle: {fontWeight: 'bold'}}}>
         <Stack.Screen 
-          name="Home" 
+          name="SUMall" 
           component={HomeScreen} 
-          options={{ 
-            title: 'Home' }, 
-            {gestureEnabled: false}, 
-            {headerBackTitleVisible: false}
+          options={
+            { title: 'Home' }, 
+            { gestureEnabled: false }, 
+            { headerBackTitleVisible: false }
           }
         />
         <Stack.Screen 
           name="Login" 
           component={LoginScreen}  
-          options={{ 
-            title: 'Login' }, 
-            {gestureEnabled: false}
+          options={
+            { title: 'Login' }, 
+            { gestureEnabled: false }
           }
         />
         <Stack.Screen 
           name="Sign Up" 
           component={SignScreen} 
-          options={{ 
-            title: 'Sign Up' }, 
-            {gestureEnabled: false}
+          options={
+            { title: 'Sign Up' }, 
+            { gestureEnabled: false }
           }
         />
       </Stack.Navigator>

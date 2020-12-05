@@ -55,10 +55,10 @@ function HomeScreen() {
       }
       return <Ionicons name={iconName} size={size} color={color}/>
     }})}>
-      <Tab.Screen name="Home" component={HomeDrawers}/>
-      <Tab.Screen name="Categories" component={CategoriesTab}/>
-      <Tab.Screen name="Cart" component={CartTab}/>
-      <Tab.Screen name="Orders" component={OrdersTab}/>
+      <Tab.Screen name="Home" component={HomeDrawers} options={{ title: 'Home' }}/>
+      <Tab.Screen name="Categories" component={CategoriesTab} options={{ title: 'Categories' }}/>
+      <Tab.Screen name="Cart" component={CartTab} options={{ title: 'Cart' }}/>
+      <Tab.Screen name="Orders" component={OrdersTab} options={{ title: 'Orders' }}/>
     </Tab.Navigator> 
   );
 }

@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, SafeAreaView } from 'react-native';
 
+
 function MainDrawer() {
     return (
       <SafeAreaView style={styles.conatiner}>
